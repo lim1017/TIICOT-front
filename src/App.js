@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 style={{display:"flex", justifyContent:"center"}}>My Students</h1>
       <SearchBar
         nameSearch={nameSearch}
         setNameSearch={setNameSearch}
