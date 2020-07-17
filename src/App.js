@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import StudentList from './components/StudentList'
+import SearchBar from './components/SearchBar'
 
 
 const axios = require("axios");
@@ -19,10 +20,12 @@ function App() {
     });
   }, []);
 
-  
+
   return (
     <div className="App">
-      <div>helllo</div>
+      <SearchBar type="First Name" />
+      <SearchBar type="Last Name"/>
+
 
       {data.length ? data.map((student, index) =>{
         return <StudentList student={student} index={index} />

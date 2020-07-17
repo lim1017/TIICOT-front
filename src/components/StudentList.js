@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from "react";
-import './StudentList.css'
-import { fake } from "faker";
-const faker = require('faker');
+import "./StudentList.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
+const faker = require("faker");
 
-
-function StudentList({student, index}) {
-
+function StudentList({ student, index }) {
   return (
-    <div className="student-container">
-      <div><img src={faker.image.avatar()} alt="Girl in a jacket" width="25px" height="25px" />
-        {student.FirstName}  {student.LastName}</div>
-    </div>
+    <Container className="student-container">
+      <Row>
+        <Col className="avatar-container">
+          <img
+            className="profile-pic"
+            src={faker.image.avatar()}
+            alt="Girl in a jacket"
+            width="125px"
+            height="125px"
+          />
+        </Col>
+        <Col>
+          <Row >
+            <div class="student-name"><strong>{student.FirstName} {student.LastName}</strong> </div>
+          </Row>
+          <Row class="student-bio">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
