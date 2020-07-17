@@ -24,10 +24,10 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Button color="inherit" onClick={() => props.history.push("/")}>
+          <Button data-cy='HomeBtn' color="inherit" onClick={() => props.history.push("/")}>
             Home
           </Button>
-          <Button color="inherit" onClick={() => props.history.push("/about")}>
+          <Button data-cy='AboutBtn' color="inherit" onClick={() => props.history.push("/about")}>
             About
           </Button>
         </Toolbar>

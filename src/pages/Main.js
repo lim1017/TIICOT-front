@@ -34,7 +34,7 @@ function Main() {
 
     if (nameSearch.First !== "") {
       const searchFilter = copy.filter((student) =>
-        student.FirstName.toLowerCase().includes(nameSearch.First)
+        student.FirstName.toLowerCase().includes(nameSearch.First.toLowerCase())
       );
       setFilterData(searchFilter);
       copy = [...searchFilter];
@@ -42,7 +42,7 @@ function Main() {
 
     if (nameSearch.Last !== "") {
       const searchFilter = copy.filter((student) =>
-        student.LastName.toLowerCase().includes(nameSearch.Last)
+        student.LastName.toLowerCase().includes(nameSearch.Last.toLowerCase())
       );
       setFilterData(searchFilter);
     }

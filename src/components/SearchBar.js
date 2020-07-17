@@ -8,6 +8,7 @@ function SearchBar({ type, nameSearch, setNameSearch }) {
       className="searchbar-container"
     >
       <TextField
+        data-cy={type}
         id="filled-full-width"
         placeholder={`Search by ${type} name`}
         fullWidth
