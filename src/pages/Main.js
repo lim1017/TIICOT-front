@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import StudentList from "../components/StudentList";
 import SearchBar from "../components/SearchBar";
@@ -8,15 +9,19 @@ const axios = require("axios");
 function Main() {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
-
   const [nameSearch, setNameSearch] = useState({ First: "", Last: "" });
+  const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
     const targetUrl = "https://tiicottom.herokuapp.com/api/get/students";
+    setLoading(true)
 
+    
     axios.get(targetUrl).then((response) => {
       setData(response.data);
       setFilterData(response.data);
+      setLoading(false)
     });
   }, []);
 
@@ -57,7 +62,13 @@ function Main() {
         type="Last"
       />
 
-      {filterData.length
+      
+
+
+      {
+      loading ? <div style={{ display: "flex", justifyContent: "center", marginTop:"20px" }}><CircularProgress size={100} /> </div> 
+      :
+      filterData.length
         ? filterData.map((student, index) => {
             return <StudentList student={student} index={index} />;
           })
