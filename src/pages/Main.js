@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 import StudentList from "../components/StudentList";
 import SearchBar from "../components/SearchBar";
 
@@ -13,23 +12,20 @@ function Main() {
   const [nameSearch, setNameSearch] = useState({ First: "", Last: "" });
 
   useEffect(() => {
-    const targetUrl = "http://localhost:3000/api/get/students";
+    const targetUrl = "https://tiicottom.herokuapp.com/api/get/students";
 
     axios.get(targetUrl).then((response) => {
-      console.log(response);
       setData(response.data);
       setFilterData(response.data);
     });
   }, []);
 
   useEffect(() => {
-
     let copy = [...data];
 
-    if(nameSearch.First === ""){
-      setFilterData(data)
+    if (nameSearch.First === "") {
+      setFilterData(data);
     }
-
 
     if (nameSearch.First !== "") {
       const searchFilter = copy.filter((student) =>
@@ -45,12 +41,11 @@ function Main() {
       );
       setFilterData(searchFilter);
     }
-
   }, [nameSearch]);
 
   return (
     <div className="App">
-      <h1 style={{display:"flex", justifyContent:"center"}}>My Students</h1>
+      <h1 style={{ display: "flex", justifyContent: "center" }}>My Students</h1>
       <SearchBar
         nameSearch={nameSearch}
         setNameSearch={setNameSearch}
