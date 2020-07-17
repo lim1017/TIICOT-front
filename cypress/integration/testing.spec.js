@@ -4,8 +4,7 @@
 context("Login", () => {
   beforeEach(() => {
     cy.server();
-    // cy.visit("https://tiicottom.netlify.app/");
-    cy.visit("http://localhost:3001/");
+    cy.visit("https://tiicottom.netlify.app/");
     cy.contains("Students").should("exist");
 
   });
