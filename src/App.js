@@ -4,7 +4,7 @@ import Main from "./pages/Main";
 import About from "./pages/About";
 import AppBar from "./components/AppBar";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 // import history from "./history";
@@ -14,7 +14,7 @@ const history = createBrowserHistory();
 function App() {
   return (
     <div className="App">
-      <Router history={history}>
+      <HashRouter history={history}>
         <AppBar />
 
         <Switch>
@@ -25,7 +25,7 @@ function App() {
             <About />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
