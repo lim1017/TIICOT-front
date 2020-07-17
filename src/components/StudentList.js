@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const faker = require("faker");
 
-function StudentList({img, student, index }) {
+function StudentList({ img, student, index }) {
   return (
     <Container className="student-container">
       <Row>
@@ -20,10 +20,18 @@ function StudentList({img, student, index }) {
           />
         </Col>
         <Col>
-          <Row >
-            <div class="student-name"><strong>{student.FirstName} {student.LastName}</strong> </div>
+          <Row>
+            <div class="student-name">
+              <strong>
+                {student.FirstName} {student.LastName}
+              </strong>{" "}
+            </div>
           </Row>
-          <Row class="student-bio">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </Row>
+          <Row class="student-bio">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s.{" "}
+          </Row>
         </Col>
       </Row>
     </Container>

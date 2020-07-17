@@ -11,7 +11,6 @@ import { createBrowserHistory } from "history";
 
 const history = createBrowserHistory();
 
-
 function App() {
   return (
     <div className="App">
@@ -22,7 +21,7 @@ function App() {
           <Route exact path="/">
             <Main />
           </Route>
-            <Route path="/about">
+          <Route path="/about">
             <About />
           </Route>
         </Switch>
