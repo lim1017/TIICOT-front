@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const faker = require("faker");
 
-function StudentList({ student, index }) {
+function StudentList({img, student, index }) {
   return (
     <Container className="student-container">
       <Row>
@@ -13,6 +13,7 @@ function StudentList({ student, index }) {
           <img
             className="profile-pic"
             src={faker.image.avatar()}
+            // src='https://i.pravatar.cc/300'
             alt="Girl in a jacket"
             width="125px"
             height="125px"

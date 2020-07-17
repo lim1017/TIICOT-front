@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SearchBar({ type }) {
+function SearchBar({ type, nameSearch, setNameSearch }) {
   const classes = useStyles();
 
   return (
@@ -23,13 +23,15 @@ function SearchBar({ type }) {
       <TextField
         id="filled-full-width"
         // style={{ margin: 8 }}
-        placeholder={`Search by ${type}`}
+        placeholder={`Search by ${type} name`}
         fullWidth
         margin="normal"
         InputLabelProps={{
           shrink: true,
         }}
+        value={nameSearch.type}
         variant="filled"
+        onChange={(e)=> setNameSearch({...nameSearch, [`${type}`]:e.target.value})}
       />
     </div>
   );
